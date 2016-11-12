@@ -7,6 +7,11 @@
  * user guide available at https://docs.gradle.org/2.11/userguide/tutorial_java_projects.html
  */
 
+plugins {
+  id "com.jfrog.artifactory" version "4.4.0"
+  id "com.jfrog.bintray" version "1.7"
+}
+
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
@@ -32,4 +37,15 @@ dependencies {
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
+}
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+            groupId 'org.elasticsearch.kafka.indexer'
+            artifactId 'Demo'
+            version project.version
+        }
+    }
 }
