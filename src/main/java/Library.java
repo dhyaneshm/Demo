@@ -5,7 +5,7 @@
  * @author dhyan, @date 11/12/16 11:14 AM
  */
 public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+    public static  void main(String[] args) {
+        System.out.println("This is printed from Demo java application");
     }
 }
