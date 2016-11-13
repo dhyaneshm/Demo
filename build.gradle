@@ -39,13 +39,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-publishing {
-    publications {
-        MyPublication(MavenPublication) {
-            from components.java
-            groupId 'org.elasticsearch.kafka.indexer'
-            artifactId 'Demo'
-            version project.version
-        }
-    }
-}
+
+
+
